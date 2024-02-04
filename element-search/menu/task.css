@@ -19,18 +19,31 @@ body {
   color: #000;
 }
 
-.menu__link:hover {
+.menu__link:hover{
   color: whitesmoke;
+  opacity: 1;
+  visibility: visible;
+  transform: rotateX(0deg);
 }
-
+/*.menu__link:hover > .menu_sub{
+  visibility: visible;
+  transform: rotateX(0deg);
+  opacity: 1;
+}*//*
 .menu__item {
   position: relative;
-}
+}*/
 
 .menu_sub {
   display: none;
   position: absolute;
   padding: 10px 10px 0 10px;
+  transform: rotateX(0deg);
+  transform-origin: 0 0;
+  transition: .3s linear;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 5;
 }
 
 .menu_sub .menu__item {
@@ -42,4 +55,10 @@ body {
   left: -10px;
   top: 100%;
   min-width: 100%;
+}
+.menu__item:hover .menu_sub {
+  display: block;
+  visibility: visible;
+  transform: rotateX(0deg);
+  opacity: 1;
 }
